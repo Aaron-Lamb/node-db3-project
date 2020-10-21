@@ -20,10 +20,19 @@ function add(scheme) {
     return database("schemes").insert(scheme);
 }
 
+function update(changes, id) {
+    return database("schemes").where('id', id).update(changes);
+}
+
+function remove(id) {
+    return database("schemes").where('id', id).del();
+}
+
 module.exports = {
     find,
     findById,
     findSteps,
     add,
-
+    update,
+    remove
 }
