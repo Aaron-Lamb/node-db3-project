@@ -16,9 +16,14 @@ function findSteps(userId) {
     .orderBy('St.step_number');
 }
 
+function add(scheme) {
+    return database("schemes").insert(scheme);
+}
+
 module.exports = {
     find,
     findById,
     findSteps,
+    add,
 
 }
